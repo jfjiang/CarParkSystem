@@ -17,6 +17,7 @@ public class SystemUI {
 		while (flag) {
 			systemUI.showMainMenu();
 		}
+		
 	}
 
 	private void showMainMenu() {
@@ -142,8 +143,8 @@ public class SystemUI {
 	private void showParkStatus() {
 		if (parking.getOccupiedPlace()>0) {
 			System.out.println("车场里有"+ parking.getOccupiedPlace()+"辆车");
+			System.out.println("订单号\t\t车牌号\t车位号\t开始时间\t");
 			for (CarOrder carOrder : parking.getCarOrderList()) {
-				System.out.println("订单号\t\t车牌号\t车位号\t开始时间\t");
 				System.out.println(carOrder.getOrderUp()+"\t"+carOrder.getCarNo()+"\t"+carOrder.getPlaceNo()+"\t"+getTime(carOrder.getBeginTime()));
 			}
 		} else {
